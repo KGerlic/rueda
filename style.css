@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ---------- Zmienne kolorów – taneczny klimat ---------- */
 :root {
     --bg: #050816;           /* tło strony */
@@ -225,4 +226,233 @@ h2 {
     .page-wrapper {
         padding: 10px;
     }
+=======
+/* ---------- Zmienne kolorów – taneczny klimat ---------- */
+:root {
+    --bg: #050816;           /* tło strony */
+    --bg-card: rgba(15, 23, 42, 0.92);
+    --accent: #f97316;       /* pomarańcz – żywy, „latino” */
+    --accent-soft: rgba(249, 115, 22, 0.15);
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+    --border-soft: rgba(148, 163, 184, 0.35);
+}
+
+/* ---------- Reset podstawowy ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- Tło i podstawowa typografia ---------- */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    background:
+        radial-gradient(circle at top left, #1f2937 0, transparent 55%),
+        radial-gradient(circle at bottom right, #111827 0, transparent 55%),
+        var(--bg);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 24px 12px;
+}
+
+/* ---------- Główne pudełko na treść ---------- */
+.page-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border-radius: 18px;
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(148, 163, 184, 0.3);
+    padding: 24px 24px 32px;
+    backdrop-filter: blur(12px);
+}
+
+/* ---------- Nagłówek ---------- */
+.page-wrapper h2 {
+    font-size: 1.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.page-wrapper h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 68px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+/* ---------- Tabela ---------- */
+
+.table-wrapper {
+    margin-top: 24px;
+    overflow-x: auto;               /* na telefonach można przewijać w bok */
+}
+
+/* usuń domyślne obramowanie HTML-a */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    min-width: 420px;               /* żeby kolumny nie były za wąskie */
+}
+
+/* Nagłówki tabeli */
+table thead th,
+table > tbody > tr:first-child > th {
+    /* na wypadek, gdyby nie było <thead> */
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.9)
+    );
+    border-bottom: 2px solid var(--accent);
+    text-align: left;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+}
+
+/* Komórki */
+th,
+td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-soft);
+    vertical-align: top;
+    font-size: 0.95rem;
+}
+
+/* Co druga linia lekko przyciemniona */
+tbody tr:nth-child(even) {
+    background-color: rgba(15, 23, 42, 0.6);
+}
+
+/* Efekt „podświetlenia” wiersza po najechaniu */
+tbody tr:hover {
+    background-color: var(--accent-soft);
+    transform: translateY(-1px);
+    transition:
+        background-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+/* Kolumna z nazwą figury */
+td:first-child {
+    width: 26%;
+    font-weight: 600;
+}
+
+/* Nazwa figury */
+td:first-child b {
+    font-size: 1.02rem;
+    color: var(--accent);
+}
+
+/* Tłumaczenie figury (mały opis) */
+td:first-child span {
+    display: block;
+    font-size: 0.78rem !important;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* Kolumna z opisem – trochę więcej „powietrza” */
+td:nth-child(2) {
+    line-height: 1.5;
+}
+
+/* ---------- Linki (jakbyś gdzieś dodał) ---------- */
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Responsywność ---------- */
+@media (max-width: 640px) {
+    .page-wrapper {
+        padding: 18px 14px 24px;
+        border-radius: 14px;
+    }
+
+    .page-wrapper h2 {
+        font-size: 1.4rem;
+    }
+
+    th,
+    td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Podpisy/tłumaczenia nazw figur (mały tekst pod nazwą) */
+.fig-sub {
+    display: block;
+    font-size: 0.78rem;      /* zamiast x-small */
+    color: var(--text-muted); /* jeśli używasz zmiennych; 
+                                 inaczej możesz dać np. #9ca3af */
+    margin-top: 2px;
+}
+
+/* Ogólna wielkość tekstu na komputerze */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Nagłówek i tabela – bazowo */
+h2 {
+    font-size: 24px;
+}
+
+.table-wrapper table {
+    font-size: 16px;
+}
+
+.fig-sub {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Większe litery na telefonach */
+@media (max-width: 768px) {
+    body {
+        font-size: 18px;      /* cały tekst większy */
+    }
+
+    h2 {
+        font-size: 22px;      /* nagłówek trochę mniejszy niż na desktopie, ale nadal czytelny */
+    }
+
+    .table-wrapper table {
+        font-size: 17px;      /* większy tekst w tabeli */
+    }
+
+    .fig-sub {
+        font-size: 14px;      /* podpisy pod figurami też większe */
+    }
+
+    /* Opcjonalnie trochę luzu po bokach na małym ekranie */
+    .page-wrapper {
+        padding: 10px;
+    }
+>>>>>>> ae1232f (costam)
 }
