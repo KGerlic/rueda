@@ -216,3 +216,26 @@ a:hover {
     font-size: 0.92rem;
   }
 }
+
+
+.page-title{
+  display: flex;
+  align-items: center;   /* wyrównanie w pionie */
+  gap: 10px;
+  line-height: 1.2;      /* ważne: stabilizuje wysokość nagłówka */
+  margin: 0;
+}
+
+.player-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* opcjonalnie, żeby link nie "rozpychał" nagłówka */
+  flex: 0 0 auto;
+  transform: translateY(1px); /* mikro-korekta, gdyby dalej było minimalnie za wysoko */
+}
+
+.player-link img{
+  display: block;        /* usuwa baseline/odstęp pod obrazkiem */
+}
